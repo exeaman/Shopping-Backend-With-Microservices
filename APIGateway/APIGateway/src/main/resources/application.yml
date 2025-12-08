@@ -1,0 +1,18 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: USERSERVICE
+          uri: lb://USERSERVICE
+          predicates:
+            - Path=/api/users/**
+
+        - id: INVENTORYSERVICE
+          uri: lb://INVENTORYSERVICE
+          predicates:
+            - Path=/api/inventory/**
+
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
