@@ -16,6 +16,7 @@ import java.util.List;
 @RequestMapping("/api/inventory")
 @RequiredArgsConstructor
 public class InventoryItemController {
+	
  private final InventoryItemService itemService;
 
  @PostMapping
