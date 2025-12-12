@@ -10,4 +10,5 @@ public interface OrderService {
     OrderResponseDTO getOrder(Long orderId);
     List<OrderResponseDTO> getOrdersByUser(Long userId);
     void cancelOrder(Long orderId);
+    boolean checkUser(Long id);
 }

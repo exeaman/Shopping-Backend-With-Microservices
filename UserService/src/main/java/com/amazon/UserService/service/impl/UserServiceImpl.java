@@ -14,6 +14,7 @@ import com.amazon.UserService.repository.UserRepository;
 import com.amazon.UserService.service.UserService;
 import com.amazon.UserService.utils.UserRole;
 
+import jakarta.validation.constraints.Null;
 import lombok.RequiredArgsConstructor;
 
 @Service
@@ -64,5 +65,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public void deleteUser(Long id) {
         userRepository.deleteById(id);
+    }
+
+    @Override
+    public boolean validateUser(Long id) {
+        return userRepository.existsById(id);
     }
 }

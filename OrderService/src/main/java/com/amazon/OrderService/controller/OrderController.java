@@ -20,12 +20,17 @@ import lombok.RequiredArgsConstructor;
 public class OrderController {
 
     private final OrderService orderService;
+    @GetMapping("/test/{id}")
+    public ResponseEntity<Boolean> checkUserId(@PathVariable Long id){
+        return ResponseEntity.ok(orderService.checkUser(id));
+    }
 
     @PostMapping
     public ResponseEntity<OrderResponseDTO> placeOrder(@Valid @RequestBody OrderRequestDTO request) {
         OrderResponseDTO response = orderService.placeOrder(request);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
+
 
     @GetMapping("/{id}")
     public ResponseEntity<OrderResponseDTO> getOrder(@PathVariable Long id) {

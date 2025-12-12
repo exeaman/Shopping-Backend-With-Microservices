@@ -91,6 +91,8 @@ public class OrderServiceImpl implements OrderService {
         return toResponseDTO(saved);
     }
 
+    
+
     @Transactional
     @Override
     public OrderResponseDTO getOrder(Long orderId) {
@@ -139,5 +141,10 @@ public class OrderServiceImpl implements OrderService {
         dto.setStatus(order.getStatus());
         dto.setItems(items);
         return dto;
+    }
+
+    @Override
+    public boolean checkUser(Long id) {
+        return userClient.validateuser(id);
     }
 }

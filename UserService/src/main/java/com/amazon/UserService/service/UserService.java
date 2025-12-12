@@ -14,6 +14,6 @@ public interface UserService {
     List<UserResponseDTO> getAllUsers();
 
     UserResponseDTO updateUser(Long id, UserRequestDTO userRequestDTO);
-
+    boolean validateUser(Long id);
     void deleteUser(Long id);
 }

@@ -12,4 +12,7 @@ import com.amazon.OrderService.dto.UserResponseDTO;
 public interface UserServiceFeignClient {
     @GetMapping("/api/users/{id}")
     UserResponseDTO getUserById(@PathVariable("id") Long id);
+
+    @GetMapping("/api/users/validateuser/{id}")
+    boolean validateuser(@PathVariable("id") Long id);
 }

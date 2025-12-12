@@ -14,5 +14,5 @@ public class OrderLineItemDTO {
     private Integer quantity;
     
     // The price, fetched from Inventory Service and included in the request
-    private Double unitPrice; 
+    private Double unitPrice;
 }
