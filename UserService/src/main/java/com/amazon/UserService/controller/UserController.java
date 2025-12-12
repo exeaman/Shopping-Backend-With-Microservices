@@ -24,6 +24,10 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class UserController {
     private final UserService userService;
+    @GetMapping("/validateuser/{id}")
+    public ResponseEntity<Boolean> validateUser(@PathVariable Long id){
+        return ResponseEntity.ok(userService.validateUser(id));
+    }
 
     @PostMapping
     public ResponseEntity<UserResponseDTO> createUser(@Valid @RequestBody UserRequestDTO dto) {
